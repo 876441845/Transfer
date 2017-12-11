@@ -1,4 +1,4 @@
-package com.cnty.test.controller;
+package com.cnty.station.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

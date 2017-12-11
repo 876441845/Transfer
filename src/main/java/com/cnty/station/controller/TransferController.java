@@ -1,8 +1,8 @@
-package com.cnty.test.controller;
+package com.cnty.station.controller;
 
-import com.cnty.test.client.TransferClient;
-import com.cnty.test.pojo.Transfer;
-import com.cnty.test.util.ResultFormatter;
+import com.cnty.station.client.TransferClient;
+import com.cnty.station.pojo.Transfer;
+import com.cnty.station.util.ResultFormatter;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

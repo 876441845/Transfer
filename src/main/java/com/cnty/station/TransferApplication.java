@@ -1,7 +1,7 @@
-package com.cnty.test;
+package com.cnty.station;
 
-import com.cnty.test.server.Server;
-import com.cnty.test.util.ApplicationContextUtil;
+import com.cnty.station.server.Server;
+import com.cnty.station.util.ApplicationContextUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

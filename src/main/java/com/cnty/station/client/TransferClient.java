@@ -1,6 +1,6 @@
-package com.cnty.test.client;
+package com.cnty.station.client;
 
-import com.cnty.test.pojo.Transfer;
+import com.cnty.station.pojo.Transfer;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 

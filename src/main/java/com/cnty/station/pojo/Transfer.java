@@ -1,4 +1,4 @@
-package com.cnty.test.pojo;
+package com.cnty.station.pojo;
 
 import lombok.Data;
 import lombok.ToString;

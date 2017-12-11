@@ -1,4 +1,4 @@
-package com.cnty.test.util;
+package com.cnty.station.util;
 
 import org.springframework.context.ApplicationContext;
 

@@ -1,6 +1,6 @@
-package com.cnty.test;
+package com.cnty.station;
 
-import com.cnty.test.client.TransferClient;
+import com.cnty.station.client.TransferClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
