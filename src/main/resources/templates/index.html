@@ -31,14 +31,12 @@
 <script type="text/javascript">
     $(function () {
         $("#submit").on("click", function () {
-            alert("1111111111111111");
             var json = {
                 machineId : $("input[name='machineId']").val(),
                 cardId : $("input[name='cardId']").val(),
                 gross : $("input[name='gross']").val(),
                 tare : $("input[name='tare']").val()
             };
-            console.log(json);
             json = JSON.stringify(json);
             $.ajax({
                 url : "/transfer",
