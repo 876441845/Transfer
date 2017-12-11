@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class HtmlController {
-    @GetMapping("/")
+    @GetMapping
     public String html() {
         return "index";
     }

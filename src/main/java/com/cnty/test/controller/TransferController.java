@@ -21,7 +21,7 @@ import java.util.Map;
 @RestController("/transfer")
 public class TransferController {
 
-    @PostMapping("/")
+    @PostMapping
     public Map<String,Object> sendMessage(@RequestBody Transfer transfer){
         TransferClient client = new TransferClient("localhost", 10010);
         client.init();
