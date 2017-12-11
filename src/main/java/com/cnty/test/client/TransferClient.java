@@ -4,12 +4,9 @@ import com.cnty.test.pojo.Transfer;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.net.UnknownHostException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
 
 /**
  * Created with IntelliJ IDEA.

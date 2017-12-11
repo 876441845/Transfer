@@ -17,8 +17,20 @@ import java.io.Serializable;
 @Data
 @ToString
 public class Transfer implements Serializable{
+    /**
+     * 设备ID
+     */
     private String machineId;
+    /**
+     * 卡号
+     */
     private String cardId;
+    /**
+     * 毛重
+     */
     private double gross;
+    /**
+     * 皮重
+     */
     private double tare;
 }
