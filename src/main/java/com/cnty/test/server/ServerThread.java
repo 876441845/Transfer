@@ -1,5 +1,8 @@
 package com.cnty.test.server;
 
+import com.cnty.test.pojo.Transfer;
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -12,23 +15,22 @@ import java.net.Socket;
  * @version: X
  * Description:
  */
+@Slf4j
 public class ServerThread implements Runnable {
-    private BufferedReader br;
-    private BufferedWriter bw;
+    private ObjectInputStream ois;
+    private ObjectOutputStream oos;
 
     ServerThread(Socket socket) throws IOException {
-        br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+        ois = new ObjectInputStream(socket.getInputStream());
+        oos = new ObjectOutputStream(socket.getOutputStream());
     }
 
     @Override
     public void run() {
-        try (PrintWriter pw = new PrintWriter(bw, true)) {
-            String line;
-            while ((line = br.readLine()) != null && !"".equals(line)) {
-                System.out.println("Accept message from client : " + line);
-            }
-        } catch (IOException e) {
+        try (PrintWriter pw = new PrintWriter(oos, true)) {
+            Transfer transfer = (Transfer) ois.readObject();
+            log.info("Accept message from client : " + transfer);
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

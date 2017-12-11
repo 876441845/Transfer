@@ -1,6 +1,7 @@
 package com.cnty.test.controller;
 
 import com.cnty.test.client.TransferClient;
+import com.cnty.test.pojo.Transfer;
 import com.cnty.test.util.ResultFormatter;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,10 +22,10 @@ import java.util.Map;
 public class TransferController {
 
     @PostMapping
-    public Map<String,Object> sendMessage(@RequestBody Map<String,Object> map){
+    public Map<String,Object> sendMessage(@RequestBody Transfer transfer){
         TransferClient client = new TransferClient("localhost", 10010);
         client.init();
-        client.send(map);
+        client.send(transfer);
         return ResultFormatter.formatResult(200,"SUCCESS",null);
     }
 

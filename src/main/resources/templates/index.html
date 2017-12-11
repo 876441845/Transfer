@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <title>中转站</title>
-    <script src="../static/jquery-3.2.1.min.js"></script>
-    <script th:src="@{/jquery-3.2.1.min.js}"></script>
+    <!--suppress JSUnresolvedLibraryURL -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 <table>
@@ -31,15 +31,21 @@
 <script type="text/javascript">
     $(function () {
         $("#submit").on("click", function () {
+            alert("1111111111111111");
+            var json = {
+                machineId : $("input[name='machineId']").val(),
+                cardId : $("input[name='cardId']").val(),
+                gross : $("input[name='gross']").val(),
+                tare : $("input[name='tare']").val()
+            };
+            console.log(json);
+            json = JSON.stringify(json);
             $.ajax({
                 url : "/transfer",
                 type : "POST",
-                data : {
-                    machineId : $("input[name='machineId']").val(),
-                    cardId : $("input[name='cardId']").val(),
-                    gross : $("input[name='gross']").val(),
-                    tare : $("input[name='tare']").val()
-                },
+                dataType:"json",
+                contentType: 'application/json;charset=UTF-8',
+                data : json,
                 success : function (data) {
                     console.log(data)
                 }

@@ -1,5 +1,6 @@
 package com.cnty.test.client;
 
+import com.cnty.test.pojo.Transfer;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,10 +32,10 @@ public class TransferClient {
         this.port = port;
     }
 
-    public void send(Map<String,Object> message) {
+    public void send(Transfer transfer) {
         try (ObjectOutputStream oos = new ObjectOutputStream(client.getOutputStream())) {
-            oos.writeObject(message);
-            log.info("Send message to server: " + message);
+            oos.writeObject(transfer);
+            log.info("Send message to server: " + transfer);
         } catch (IOException e) {
             e.printStackTrace();
         }

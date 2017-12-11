@@ -47,7 +47,7 @@ public class Server {
             try {
                 //开始监听,等待客户端的连接
                 socket = serverSocket.accept();
-                log.info("新客户端: " + socket + "[已连接]");
+                log.info("New client: " + socket + "[Connected]");
                 // 将输入、输出交给线程处理
                 executorService.execute(new ServerThread(socket));
             } catch (IOException e) {
