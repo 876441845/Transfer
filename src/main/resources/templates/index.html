@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>中转站</title>
+    <script src="../static/jquery-3.2.1.min.js"></script>
+    <script th:src="@{/jquery-3.2.1.min.js}"></script>
+</head>
+<body>
+<table>
+    <tr>
+        <td>设备ID</td>
+        <td><input type="text" name="machineId" title="设备ID" required="required"/></td>
+    </tr>
+    <tr>
+        <td>卡号</td>
+        <td><input type="text" name="cardId" title="卡号" required="required"/></td>
+    </tr>
+    <tr>
+        <td>毛重</td>
+        <td><input type="text" name="gross" title="毛重" required="required"/></td>
+    </tr>
+    <tr>
+        <td>皮重</td>
+        <td><input type="text" name="tare" title="皮重" required="required"/></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="上传数据" id="submit"/></td>
+    </tr>
+</table>
+<script type="text/javascript">
+    $(function () {
+        $("#submit").on("click", function () {
+            $.ajax({
+                url : "/transfer",
+                type : "POST",
+                data : {
+                    machineId : $("input[name='machineId']").val(),
+                    cardId : $("input[name='cardId']").val(),
+                    gross : $("input[name='gross']").val(),
+                    tare : $("input[name='tare']").val()
+                },
+                success : function (data) {
+                    console.log(data)
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>
